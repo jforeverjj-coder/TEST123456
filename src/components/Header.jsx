@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Landmark, Ticket, Menu, X, ExternalLink, Sparkles, Lock } from 'lucide-react';
 import { PROJECT_INFO } from '../data/heritageData';
 
+export const BUSAN_MODERN_HISTORY_MUSEUM_URL = "https://www.busan.go.kr/mmch/index";
+
 export default function Header({ activeSection, setActiveSection, onOpenTicketModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { id: 'pairing', label: '예술가-미래유산 연계 창' },
-    { id: 'museum', label: '금고미술관 전시관' },
+    { id: 'museum', label: '금고미술관 전시관', url: BUSAN_MODERN_HISTORY_MUSEUM_URL, isExternal: true },
     { id: 'map', label: '부산 아트 맵' },
     { id: 'archive', label: '디지털 아카이브' },
     { id: 'citizen', label: '시민 방명록 & 공모' },
@@ -44,12 +46,26 @@ export default function Header({ activeSection, setActiveSection, onOpenTicketMo
           <ul className="nav-menu">
             {navItems.map((item) => (
               <li key={item.id}>
-                <a
-                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(item.id)}
-                >
-                  {item.label}
-                </a>
+                {item.isExternal ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-link"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}
+                    title="Home : 부산광역시 부산근현대역사관 공식 웹사이트 이동"
+                  >
+                    <span>{item.label}</span>
+                    <ExternalLink size={13} />
+                  </a>
+                ) : (
+                  <a
+                    className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>

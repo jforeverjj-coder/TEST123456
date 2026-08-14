@@ -1,6 +1,8 @@
 import React from 'react';
-import { Landmark, Calendar, Clock, MapPin, Bus, Volume2, Ticket, CheckCircle, ShieldCheck, Lock } from 'lucide-react';
+import { Landmark, Calendar, Clock, MapPin, Bus, Volume2, Ticket, CheckCircle, ShieldCheck, Lock, ExternalLink } from 'lucide-react';
 import { MUSEUM_INFO, PROJECT_INFO } from '../data/heritageData';
+
+export const BUSAN_MODERN_HISTORY_MUSEUM_URL = "https://www.busan.go.kr/mmch/index";
 
 export default function ExhibitionHub({ onOpenTicketModal }) {
   return (
@@ -22,9 +24,18 @@ export default function ExhibitionHub({ onOpenTicketModal }) {
               <Lock size={22} />
             </div>
             <div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: '#fff' }}>
-                {MUSEUM_INFO.name}
-              </h3>
+              <a
+                href={BUSAN_MODERN_HISTORY_MUSEUM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                title="Home : 부산광역시 부산근현대역사관 공식 웹사이트 이동"
+              >
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', color: '#fff' }}>
+                  {MUSEUM_INFO.name}
+                </h3>
+                <ExternalLink size={16} color="var(--primary-gold)" />
+              </a>
               <div style={{ fontSize: '0.8rem', color: 'var(--primary-gold)' }}>구 한국은행 부산지점 지하 금고 보존·예술 공간</div>
             </div>
           </div>
