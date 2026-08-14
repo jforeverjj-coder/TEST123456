@@ -1,4 +1,4 @@
-// 부산미래유산 아트 프로젝트 데이터셋 (전시장소: 부산근현대역사관 본관 지하 1층 금고미술관 반영)
+// 부산미래유산 아트 프로젝트 데이터셋 (구글맵 연동 URL 포함)
 
 export const PROJECT_INFO = {
   title: "부산미래유산 아트 프로젝트 : 시선을 잇다, 미래를 짓다",
@@ -29,6 +29,7 @@ export const ARTIST_PAIRINGS = [
     heritageYear: "1912년 준공 (미래유산 제2014-03호)",
     district: "중구",
     address: "부산광역시 중구 중앙동4가 15-3 일원 (부산항 1부두)",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=부산항1부두",
     heritageDescription: "1912년 준공된 대한민국 최초의 근대식 항만 시설. 한국전쟁 당시 피란민과 군수·구호물자가 입항한 역사적 관문이자, 수출 대한민국으로 발돋움한 부산 항만의 기원이 되는 근현대 유산.",
     heritageImageUrl: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80",
     
@@ -72,6 +73,7 @@ export const ARTIST_PAIRINGS = [
     heritageYear: "1950년대 형성 (미래유산 제2014-01호)",
     district: "중구",
     address: "부산광역시 중구 대청로 67-1 일원",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=보수동책방골목",
     heritageDescription: "한국전쟁 당시 헌책방들이 모여 형성된 대한민국 대표 책방 골목. 피란시절 지식의 창구이자 부산의 인문학적 정신이 깃든 장소.",
     heritageImageUrl: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80",
     
@@ -115,6 +117,7 @@ export const ARTIST_PAIRINGS = [
     heritageYear: "1934년 준공 (미래유산 제2014-05호)",
     district: "영도구",
     address: "부산광역시 영도구 대교동1가 ~ 중구 중앙동4가",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=영도대교",
     heritageDescription: "대한민국 최초의 연륙교이자 유일한 상판 도개 교량. 피란 시절 헤어진 가족들이 만나는 기약의 장소이자 부산 항도 역사의 아이콘.",
     heritageImageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80",
 
@@ -158,6 +161,7 @@ export const ARTIST_PAIRINGS = [
     heritageYear: "1925년 준공 (미래유산 제2014-12호)",
     district: "서구",
     address: "부산광역시 서구 구덕로 225 (부용동2가)",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=임시수도정부청사",
     heritageDescription: "한국전쟁기 1,023일 동안 대한민국 임시수도의 정부청사로 사용된 붉은 벽돌의 근대 역사 건축물.",
     heritageImageUrl: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=1200&q=80",
 
@@ -201,6 +205,7 @@ export const ARTIST_PAIRINGS = [
     heritageYear: "1960~70년대 형성 (미래유산 제2015-08호)",
     district: "동구",
     address: "부산광역시 동구 초량동 산복도로 및 168계단 일대",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=초량168계단",
     heritageDescription: "산비탈을 따라 개간된 부산 특유의 주거 형태와 도로. 피란민들과 산복도로 아낙들의 치열했던 삶의 흔적.",
     heritageImageUrl: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80",
 
@@ -241,6 +246,7 @@ export const ARTIST_PAIRINGS = [
 export const MUSEUM_INFO = {
   name: "부산근현대역사관 (본관 B1 금고미술관)",
   address: "부산광역시 중구 대청로 112 (대청동2가) 본관 지하 1층 금고미술관",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=부산근현대역사관",
   tel: "051-607-6300",
   traffic: [
     "지하철: 1호선 중앙역 5번 출구 (도보 5분), 남포역 1번 출구 (도보 7분)",
