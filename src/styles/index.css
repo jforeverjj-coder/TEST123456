@@ -104,10 +104,17 @@ body {
 
 .brand-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+.brand-title-accent {
+  color: var(--primary-gold-light);
+  font-weight: 900;
 }
 
 .nav-menu {

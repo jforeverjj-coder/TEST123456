@@ -29,8 +29,13 @@ export default function Header({ activeSection, setActiveSection, onOpenTicketMo
         <a href="#hero" className="brand-wrapper" onClick={() => handleNavClick('hero')}>
           <div className="brand-badge">금고미술관 X ART</div>
           <div>
-            <div className="brand-title">부산미래유산 아트 프로젝트</div>
-            <div style={{ fontSize: '0.72rem', color: '#9ca3af' }}>부산근현대역사관 본관 B1 금고미술관</div>
+            <div className="brand-title">
+              <span>부산미래유산</span><br />
+              <span className="brand-title-accent">아트 프로젝트</span>
+            </div>
+            <div style={{ fontSize: '0.72rem', color: '#9ca3af', marginTop: '0.15rem' }}>
+              부산근현대역사관 본관 B1 금고미술관
+            </div>
           </div>
         </a>
 
