@@ -1,8 +1,27 @@
-import React from 'react';
-import { Sparkles, Calendar, MapPin, ArrowRight, Anchor, Landmark } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sparkles, Calendar, MapPin, ArrowRight, Anchor, Landmark, Lock, Image } from 'lucide-react';
 import { PROJECT_INFO } from '../data/heritageData';
 
 export default function HeroSection({ onExplorePairings, onOpenTicketModal }) {
+  const [heroImgType, setHeroImgType] = useState('VAULT'); // 'VAULT' | 'PORT'
+
+  const heroCardImages = {
+    VAULT: {
+      url: "/vault_art_museum.jpg",
+      title: "부산근현대역사관 본관 B1 금고미술관 실물 전경",
+      subtitle: "구 한국은행 지하 금고문 및 레드카펫 특화 전시장",
+      badge: "금고미술관 실물 전경"
+    },
+    PORT: {
+      url: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80",
+      title: "귀환(歸還)의 바다 : 제1부두 1912-2026",
+      subtitle: "부산항 1부두 (미래유산 2014-03) X 최진혁 작가",
+      badge: "미디어 아키텍처"
+    }
+  };
+
+  const currentImg = heroCardImages[heroImgType];
+
   return (
     <section id="hero" className="hero-section">
       <div className="hero-container">
@@ -50,24 +69,61 @@ export default function HeroSection({ onExplorePairings, onOpenTicketModal }) {
           </div>
         </div>
 
-        {/* Right Featured Card Graphic: Busan Port Pier 1 */}
+        {/* Right Featured Card Graphic: User Uploaded Vault Art Museum Image */}
         <div className="hero-card">
-          <img
-            src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80"
-            alt="부산항 1부두 항만 배경과 미디어 아키텍처"
-            className="hero-card-img"
-          />
+          <div style={{ position: 'relative' }}>
+            <img
+              src={currentImg.url}
+              alt={currentImg.title}
+              className="hero-card-img"
+            />
+            
+            {/* Toggle Image Buttons */}
+            <div style={{ position: 'absolute', top: '0.75rem', right: '0.75rem', display: 'flex', gap: '0.4rem', background: 'rgba(9,18,29,0.85)', padding: '0.3rem', borderRadius: 'var(--radius-sm)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <button
+                onClick={() => setHeroImgType('VAULT')}
+                style={{
+                  background: heroImgType === 'VAULT' ? 'var(--primary-gold)' : 'transparent',
+                  color: heroImgType === 'VAULT' ? '#000' : '#fff',
+                  border: 'none',
+                  borderRadius: '4px',
+                  padding: '0.2rem 0.5rem',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  cursor: 'pointer'
+                }}
+              >
+                금고미술관 실경
+              </button>
+              <button
+                onClick={() => setHeroImgType('PORT')}
+                style={{
+                  background: heroImgType === 'PORT' ? 'var(--primary-gold)' : 'transparent',
+                  color: heroImgType === 'PORT' ? '#000' : '#fff',
+                  border: 'none',
+                  borderRadius: '4px',
+                  padding: '0.2rem 0.5rem',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  cursor: 'pointer'
+                }}
+              >
+                부산항 1부두
+              </button>
+            </div>
+          </div>
+
           <div className="hero-card-info">
             <div>
               <div style={{ fontSize: '0.75rem', color: '#e5b95a', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                <Anchor size={13} /> 금고미술관 대표 출품작 01 (부산항 1부두)
+                <Lock size={13} /> {currentImg.badge}
               </div>
-              <div className="hero-card-title">귀환(歸還)의 바다 : 제1부두 1912-2026</div>
+              <div className="hero-card-title">{currentImg.title}</div>
               <div style={{ fontSize: '0.85rem', color: '#9ca3af' }}>
-                부산항 1부두 (미래유산 2014-03) X 최진혁 작가
+                {currentImg.subtitle}
               </div>
             </div>
-            <span className="badge-artwork">미디어 아키텍처</span>
+            <span className="badge-artwork">B1 금고미술관</span>
           </div>
         </div>
       </div>
